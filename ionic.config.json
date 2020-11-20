@@ -1,0 +1,7 @@
+{
+  "name": "fw-react-tabs-hardware-back",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
