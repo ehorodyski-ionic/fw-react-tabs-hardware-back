@@ -1,12 +1,14 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './Tab3.css';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 
 const Tab3: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
+        <IonButtons slot="start">
+          <IonBackButton />
+        </IonButtons>
           <IonTitle>Tab 3</IonTitle>
         </IonToolbar>
       </IonHeader>

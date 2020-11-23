@@ -1,19 +1,7 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
-} from '@ionic/react';
+import { IonApp } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/tabs/Tab1';
-import Tab2 from './pages/tabs/Tab2';
-import Tab3 from './pages/tabs/Tab3';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,13 +23,15 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import HomePage from './pages/HomePage';
 import TabsOutlet from './pages/TabsOutlet';
+import LoginPage from './pages/LoginPage';
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <Route path="/home" component={HomePage} />
+      <Route path="/login" component={LoginPage} exact={true} />
       <Route path="/tabs" component={TabsOutlet} />
-      <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
+      <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
     </IonReactRouter>
   </IonApp>
 );
