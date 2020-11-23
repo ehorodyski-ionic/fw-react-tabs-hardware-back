@@ -1,5 +1,5 @@
-import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Redirect, Route, useHistory } from 'react-router-dom';
 import { IonApp } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
@@ -24,14 +24,17 @@ import './theme/variables.css';
 import HomePage from './pages/HomePage';
 import TabsOutlet from './pages/TabsOutlet';
 import LoginPage from './pages/LoginPage';
+import BackButtonFix from './components/BackButtonPatch';
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
+    <BackButtonFix>
       <Route path="/home" component={HomePage} />
       <Route path="/login" component={LoginPage} exact={true} />
       <Route path="/tabs" component={TabsOutlet} />
-      <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
+        <Route path="/" render={() => <Redirect to="/login" />} exact={true} />
+        </BackButtonFix>
     </IonReactRouter>
   </IonApp>
 );
